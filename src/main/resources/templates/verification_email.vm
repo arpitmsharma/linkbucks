@@ -1,0 +1,11 @@
+<html>
+<body>
+Hey ${username}
+
+Welcome to LinkBucks .
+Please verify your LinkBucks account by clicking the <a href="
+${link}">Verify</a>
+If redirect is not working, visit the following address 
+${link} in the browser.
+</body>
+</html>

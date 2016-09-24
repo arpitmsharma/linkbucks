@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<mvc:annotation-driven>
+		<mvc:argument-resolvers>
+			<bean
+				class="org.springframework.security.web.bind.support.AuthenticationPrincipalArgumentResolver" />
+		</mvc:argument-resolvers>
+	</mvc:annotation-driven>
+
+	<mvc:resources location="/static/" mapping="/static/**"></mvc:resources>
+
+	<bean
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<!-- Example: a logical view name of 'showMessage' is mapped to '/WEB-INF/jsp/showMessage.jsp' -->
+		<property name="prefix" value="/WEB-INF/view/" />
+		<property name="suffix" value=".jsp" />
+	</bean>
+	<bean id="AccessController" class="com.myt.pmg.controller.AccessController">
+	</bean>
+	<bean id="homeController" class="com.myt.pmg.controller.HomeController">
+		<property name="userService" ref="userService"></property>
+		<property name="ipService" ref="ipService"></property>
+		<property name="faqService" ref="faqService"></property>
+	</bean>
+	<bean id="userController" class="com.myt.pmg.controller.UserController">
+		<property name="userService" ref="userService"></property>
+		<property name="velocityTemplateMail" ref="velocityTemplateMail">
+		</property>
+
+		<property name="questionnaireService" ref="questionnaireService">
+		</property>
+	</bean>
+	<bean id="linkController" class="com.myt.pmg.controller.LinkController">
+		<property name="linkService" ref="linkService"></property>
+		<property name="userLinkService" ref="userlinkService"></property>
+		<property name="feedbackService" ref="feedbackService"></property>
+	</bean>
+	<bean id="proofController" class="com.myt.pmg.controller.ProofController">
+		<property name="proofService" ref="proofService"></property>
+		<property name="userlinkService" ref="userlinkService"></property>
+		<property name="downloadHandler" ref="downloadHandler"></property>
+	</bean>
+	<bean id="notificationController" class="com.myt.pmg.controller.NotificationController">
+		<property name="notificationService" ref="notificationService"></property>
+	</bean>
+	<bean class="org.springframework.context.support.ResourceBundleMessageSource"
+		id="messageSource">
+		<property name="basename" value="paths" />
+	</bean>
+	<bean id="adminController" class="com.myt.pmg.controller.AdminController">
+		<property name="userService" ref="userService"></property>
+		<property name="faqService" ref="faqService"></property>
+		<property name="reportService" ref="reportService"></property>
+		<property name="notificationService" ref="notificationService">
+		</property>
+		<property name="ipService" ref="ipService"></property>
+	</bean>
+</beans>

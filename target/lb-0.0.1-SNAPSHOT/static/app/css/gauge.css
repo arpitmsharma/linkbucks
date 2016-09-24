@@ -1,0 +1,36 @@
+
+
+audio, canvas, progress, video {
+    display: inline-block;
+    vertical-align: baseline;
+
+
+.top-stats-panel {
+    min-height:164px;
+}
+.widget-h {
+    color:#afaebc;
+    font-size:16px;
+    text-transform:uppercase;
+    margin:0px 0px 10px 0px;
+    text-align:center;
+}
+.gauge-canvas {
+    text-align:center;
+}
+.gauge-value {
+    color:#fa8564;
+    font-size:16px;
+    font-weight:bold;
+    padding-left:20px;
+}
+.gauge-title {
+    color:#ccc;
+    font-size:14px;
+    padding-right:20px;
+}
+.gauge-meta {
+    margin:0px;
+    padding-top:7px;
+    list-style: none;
+    padding-left: 0;

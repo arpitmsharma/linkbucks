@@ -1,0 +1,70 @@
+html {
+    text-rendering: optimizeLegibility !important;
+    -webkit-font-smoothing: antialiased !important;
+}
+body {
+    color:#767676;
+    background:#f1f2f7;
+    font-family:'Open Sans',sans-serif;
+    padding:0px !important;
+    margin:0px !important;
+    font-size:13px;
+    text-rendering:optimizeLegibility;
+}
+
+#main-content {
+    margin-left:240px;
+    -webkit-transition:all .3s ease-in-out;
+    -moz-transition:all .3s ease-in-out;
+    -o-transition:all .3s ease-in-out;
+    transition:all .3s ease-in-out;
+}
+::selection {
+    background:#1FB5AD;
+    color:#fff;
+}
+.wrapper {
+    display:inline-block;
+    margin-top:80px;
+    padding:15px;
+    width:100%;
+
+}
+
+ul, .list-unstyled {
+    padding-left: 30px;
+
+audio, canvas, progress, video {
+    display: inline-block;
+    vertical-align: baseline;
+
+
+.top-stats-panel {
+    min-height:164px;
+}
+.widget-h {
+    color:#afaebc;
+    font-size:16px;
+    text-transform:uppercase;
+    margin:0px 0px 10px 0px;
+    text-align:center;
+}
+.gauge-canvas {
+    text-align:center;
+}
+.gauge-value {
+    color:#fa8564;
+    font-size:16px;
+    font-weight:bold;
+    padding-left:20px;
+}
+.gauge-title {
+    color:#ccc;
+    font-size:14px;
+    padding-right:20px;
+}
+.gauge-meta {
+    margin:0px;
+    padding-top:7px;
+    list-style: none;
+    padding-left: 0;
